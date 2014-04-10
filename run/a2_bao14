@@ -1,0 +1,1 @@
+~/2HOT/apps/montepython/montepython/MontePython.py run -p input/a2_bao14.param -o chains/a2_bao14 --conf default.conf --covmat covmat/a2_pivot.covmat --bestfit bestfit/a2_pivot.bestfit -N 16000

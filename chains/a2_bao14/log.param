@@ -1,0 +1,123 @@
+#-----CLASS v2.1.2 (branch: master, hash: c1703d860d0b4761dd16330a8e6d547b18148a49)-----
+
+#------Experiments to test (separated with commas)-----
+
+data.experiments=['Planck_highl','Planck_lowl','lowlike','bao_boss14','bicep2']
+
+#------ Settings for the over-sampling. The first element will always be set to
+# 1, for it is the sampling of the cosmological parameters. The other numbers
+# describe the over sampling of the nuisance parameter space. This array must
+# have the same dimension as the number of blocks in your run (so, 1 for
+# cosmological parameters, and then 1 for each experiment with varying nuisance
+# parameters).
+data.over_sampling=[1, 6]
+
+#------ Parameter list -------
+
+# data.parameters[class name] = [mean, min, max, 1-sigma, scale, role]
+# - if min max irrelevant, put to -1
+# - if fixed, put 1-sigma to 0
+# - if scale irrelevant, put to 1, otherwise to the appropriate factor
+# - role is either 'cosmo' or 'nuisance'
+
+# Cosmological parameters list
+
+data.parameters['omega_b']   = [2.2253,   -1,-1, 0.028,  0.01,   'cosmo']
+data.parameters['omega_cdm'] = [0.11919,  -1,-1, 0.0027,    1,   'cosmo']
+data.parameters['H0']        = [67.802,   -1,-1, 1.2,       1,   'cosmo']
+data.parameters['A_s']       = [2.2177,    0,-1, 0.055, 1.e-9,   'cosmo']
+data.parameters['n_s']       = [0.96229,   0,-1, 0.0074,    1,   'cosmo']
+data.parameters['tau_reio']  = [0.09463,   0,-1, 0.013,     1,   'cosmo']
+data.parameters['r']         = [0.2,       0,-1, 0.05,      1,   'cosmo']
+
+# Nuisance parameter list, same call, except the name does not have to be a class name
+
+data.parameters['A_ps_100']  = [145.83,    0,-1,     61, 1, 'nuisance']
+data.parameters['A_ps_143']  = [49.578,    0,-1,     14, 1, 'nuisance']
+data.parameters['A_ps_217']  = [121.36,    0,-1,     16, 1, 'nuisance']
+data.parameters['A_cib_143'] = [4.3922,    0,20,    5.4, 1, 'nuisance']
+data.parameters['A_cib_217'] = [24.869,    0,-1,    7.1, 1, 'nuisance']
+data.parameters['A_sz']      = [9.7748,    0,10,    2.3, 1, 'nuisance']
+data.parameters['r_ps']      = [0.92873,   0, 1,  0.074, 1, 'nuisance']
+data.parameters['r_cib']     = [0.37566,   0, 1,   0.22, 1, 'nuisance']
+data.parameters['n_Dl_cib']  = [0.53809,   0, 2,    .12, 1, 'nuisance']
+data.parameters['cal_100']   = [1.0006,    0,-1,0.00041, 1, 'nuisance']
+data.parameters['cal_217']   = [0.99632,   0,-1, 0.0014, 1, 'nuisance']
+data.parameters['xi_sz_cib'] = [0.20243,   0, 1,   0.34, 1, 'nuisance']
+data.parameters['A_ksz']     = [1.5184,    0,10,    3.4, 1, 'nuisance']
+data.parameters['Bm_1_1']    = [1.1028,   -1,-1,   0.59, 1, 'nuisance']
+
+# Derived parameters
+
+data.parameters['z_reio']          = [1,-1,-1, 0,     1,   'derived']
+data.parameters['Omega_Lambda']    = [1,-1,-1, 0,     1,   'derived']
+data.parameters['YHe']             = [1,-1,-1, 0,     1,   'derived']
+data.parameters['ln10^{10}A_s']    = [0,-1,-1, 0,     1,   'derived']
+data.parameters['age']             = [1,-1,-1, 0,     1,   'derived']
+
+# set these if sigma8 will be calculated
+data.parameters['sigma8']          = [1,-1,-1, 0,     1,   'derived']
+data.cosmo_arguments['output'] = 'mPk'
+# > 5.0 for sigma8 to 4 digits
+data.cosmo_arguments['P_k_max_1/Mpc'] = 10.0
+
+# Other cosmo parameters (fixed parameters, precision parameters, etc.)
+
+data.cosmo_arguments['k_pivot'] = 0.05
+data.cosmo_arguments['n_t'] = 0
+data.cosmo_arguments['alpha_t'] = 0
+
+data.cosmo_arguments['recombination'] = 'RECFAST'
+data.cosmo_arguments['Omega_fld'] = 0
+data.cosmo_arguments['Omega_k'] = 0.0
+data.cosmo_arguments['reionization_width'] = 0.5
+data.cosmo_arguments['T_cmb'] = 2.7255
+data.cosmo_arguments['alpha_s'] = 0.0
+data.cosmo_arguments['sBBN file'] = data.path['cosmo']+'/bbn/sBBN.dat'
+data.cosmo_arguments['two_photon_tables hyrec file'] = data.path['cosmo']+'/hyrec/two_photon_tables.dat'
+data.cosmo_arguments['R_inf hyrec file'] = data.path['cosmo']+'/hyrec/R_inf.dat'
+data.cosmo_arguments['Alpha_inf hyrec file'] = data.path['cosmo']+'/hyrec/Alpha_inf.dat'
+
+#------ Likelihood parameters -----
+bicep2.fields = ['B', 'E']
+
+#------ Mcmc parameters ----
+
+data.N=10
+data.write_step=5
+
+
+#-----Likelihood-Planck_highl-----
+Planck_highl.path_clik = '/scratch3/mswarren/planck/data/../CAMspec_v6.2TN_2013_02_26_dist.clik'
+
+
+#-----Likelihood-Planck_lowl-----
+Planck_lowl.path_clik = '/scratch3/mswarren/planck/data/../commander_v4.1_lm49.clik'
+
+
+#-----Likelihood-lowlike-----
+lowlike.path_clik = '/scratch3/mswarren/planck/data/../lowlike_v222.clik'
+
+
+#-----Likelihood-bao_boss14-----
+bao_boss14.exclude = []
+bao_boss14.file = 'bao_2014.txt'
+bao_boss14.data_directory = '/usr/projects/cosmo/mswarren/2HOT/apps/montepython/data'
+bao_boss14.rs_rescale = 1.0
+
+
+#-----Likelihood-bicep2-----
+bicep2.fields = ['B', 'E']
+bicep2.data_directory = '/usr/projects/cosmo/mswarren/2HOT/apps/montepython/data'
+
+
+#-----------Cosmological-arguments---------
+data.cosmo_arguments.update({'two_photon_tables hyrec file': '/usr/projects/cosmo/mswarren/2HOT/apps/class/hyrec/two_photon_tables.dat', 'sBBN file': '/usr/projects/cosmo/mswarren/2HOT/apps/class/bbn/sBBN.dat', 'R_inf hyrec file': '/usr/projects/cosmo/mswarren/2HOT/apps/class/hyrec/R_inf.dat', 'modes': ' s, t ', 'n_t': 0, 'recombination': 'RECFAST', 'Omega_fld': 0, 'l_max_scalars': 2500, 'P_k_max_1/Mpc': 10.0, 'Omega_k': 0.0, 'k_pivot': 0.05, 'alpha_t': 0, 'lensing': ' yes ', 'alpha_s': 0.0, 'reionization_width': 0.5, 'l_max_tensors': 600.0, 'output': 'mPk tCl lCl pCl  tCl pCl lCl ', 'T_cmb': 2.7255, 'Alpha_inf hyrec file': '/usr/projects/cosmo/mswarren/2HOT/apps/class/hyrec/Alpha_inf.dat'})
+
+
+#--------Default-Configuration------
+data.path['cosmo']	= '/usr/projects/cosmo/mswarren/2HOT/apps/class'
+data.path['root']	= '/turquoise/usr/projects/cosmo/mswarren/2HOT/apps/montepython'
+data.path['data']	= '/usr/projects/cosmo/mswarren/2HOT/apps/montepython/data'
+data.path['clik']	= '/scratch3/mswarren/planck/data'
+data.path['MontePython']	= '/turquoise/usr/projects/cosmo/mswarren/2HOT/apps/montepython/montepython'

@@ -1,0 +1,42 @@
+
+a2_bao14_mean = {
+	"omega_b" : 0.0221396,
+	"omega_cdm" : 0.11754,
+	"H0" : 68.8062,
+	"A_s" : 2.18713e-09,
+	"n_s" : 0.967641,
+	"tau_reio" : 0.0906165,
+	"r" : 0.173672,
+	"Omega_Lambda" : 0.704751,
+	"YHe" : 0.247741,
+	"sigma8" : 0.834409,
+}
+
+a2_bao14_best = {
+	"omega_b" : 0.0220115,
+	"omega_cdm" : 0.117989,
+	"H0" : 68.4636,
+	"A_s" : 2.18005e-09,
+	"n_s" : 0.968767,
+	"tau_reio" : 0.0875533,
+	"r" : 0.151111,
+	"Omega_Lambda" : 0.701229,
+	"YHe" : 0.247686,
+	"sigma8" : 0.835525,
+
+	"lnL" : -4921.51,
+	"chi2" : 9843,
+}
+
+a2_bao14_err = {
+	"omega_b_1sigma" : 0.000241,
+	"omega_cdm_1sigma" : 0.00145,
+	"H0_1sigma" : 0.662,
+	"A_s_1sigma" : 5.51e-11,
+	"n_s_1sigma" : 0.00537,
+	"tau_reio_1sigma" : 0.0126,
+	"r_1sigma" : 0.0385,
+	"Omega_Lambda_1sigma" : 0.00828,
+	"YHe_1sigma" : 0.000104,
+	"sigma8_1sigma" : 0.0117,
+}
