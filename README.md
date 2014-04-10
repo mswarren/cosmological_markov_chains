@@ -1,5 +1,5 @@
 Cosmological Markov Chain Monte Carlo Data
-==========================================
+------------------------------------------
 
 We thank the Institutional Computing Program at Los Alamos National Laboratory for providing the computing resources used to generate this data.
 
