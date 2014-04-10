@@ -11,3 +11,5 @@ Audren, Benjamin, Julien Lesgourgues, Karim Benabed, and Simon Prunet. “Conser
 
 Warren, Michael (2014): Cosmological Markov Chains. figshare. 
 http://dx.doi.org/10.6084/m9.figshare.994210
+
+![Triangle plot](chains/a2_bao14/plots/a2_bao14_triangle.png "Triangle plot")
