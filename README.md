@@ -1,7 +1,7 @@
 Cosmological Markov Chain Monte Carlo Data
 ------------------------------------------
 
-We thank the Institutional Computing Program at Los Alamos National Laboratory for providing the computing resources used to generate this data.
+We thank the Institutional Computing Program at Los Alamos National Laboratory for providing the computing resources used to generate this data.  Running a million-step chain requires roughly 20,000 CPU hours.
 
 If this data is used in a publication, please cite the following:
 
@@ -12,9 +12,9 @@ Audren, Benjamin, Julien Lesgourgues, Karim Benabed, and Simon Prunet. “Conser
 Warren, Michael S. (2014): Cosmological Markov Chains. figshare. 
 http://dx.doi.org/10.6084/m9.figshare.994210
 
-Model a2_bao14 is based on the following observational data:
+Model __a2_bao14__ is based on the following observational data:
 
-Planck_highl, Planck_lowl, lowlike, bao_boss14, bicep2
+__Planck_highl, Planck_lowl, lowlike, bao_boss14, bicep2__
 
 Anderson, Lauren, Eric Aubourg, Stephen Bailey, Florian Beutler, Vaishali Bhardwaj, Michael Blanton, Adam S. Bolton, et al. “The Clustering of Galaxies in the SDSS-III Baryon Oscillation Spectroscopic Survey: Baryon Acoustic Oscillations in the Data Release 10 and 11 Galaxy Samples.” arXiv:1312.4877 [astro-Ph], December 17, 2013. http://arxiv.org/abs/1312.4877.
 
