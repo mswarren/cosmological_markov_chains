@@ -1,0 +1,6 @@
+[submodule "class_public"]
+	path = class_public
+	url = https://github.com/mswarren/class_public
+[submodule "montepython_public"]
+	path = montepython_public
+	url = https://github.com/mswarren/montepython_public
